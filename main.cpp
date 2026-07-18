@@ -13,7 +13,7 @@
 
 int main(void) {
 
-    GLFWwindow *window = window_init(SCRW, SCRH, "bruh", 3, 3);
+    GLFWwindow *window = window_init(SCRW, SCRH, "My beautiful Project", 3, 3);
 
     program shader_p("shader/vert.glsl", "shader/frag.glsl");
 
@@ -25,17 +25,17 @@ int main(void) {
     block.scale(glm::vec3(0.1, 0.1, 0.1));
 
     float deltatime = 0.0f;
-    float lastframe = 0.0f;
-    float currentframe = 0.0f;
+    float lastframe = 0.0f; 
+    float currentframe = 0.0f; //optimized code by 0.00001% 
 
     while(!glfwWindowShouldClose(window)) {
         currentframe = glfwGetTime();
         deltatime = currentframe - lastframe;
         lastframe = currentframe;
 
-        cam.speed *= deltatime;
+        cam.speed *= deltatime ;
 
-        block.translate(glm::vec3(0.0f, 3 * glm::sin(glm::radians(glfwGetTime()*200)), 0.0f), deltatime);
+        block.translate(glm::vec3(0.0f, 3 * glm::sin(glm::radians(glfwGetTime()*200)), 0.0f), deltatime); // magic number fest
         block.rotate(50.0f, deltatime, glm::vec3(0.0f, 1.0f, 0.0f));
 
 
