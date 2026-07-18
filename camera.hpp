@@ -5,6 +5,8 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
+#include <iostream>
+
 #define UP_VEC glm::vec3(0.0f, 1.0f, 0.0f)
 #define NEAR_PLANE 0.1f
 #define FAR_PLANE 1000.0f
@@ -22,7 +24,11 @@ public:
     float speed;
     float fov;
     float aspect_ratio;
-
+    int posy = 0;
+    int posx = 0;
+    int posz = 0;
+    glm::vec3 up;
+    glm::vec3 right;
     glm::vec3 pos;
     glm::vec3 front;
     glm::vec3 direction;
