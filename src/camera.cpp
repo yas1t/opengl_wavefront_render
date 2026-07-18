@@ -34,7 +34,6 @@ void camera::move(GLFWwindow **window) {
 
     float oneoversqrtthree = 1/(glm::sqrt(3.0f));
     float oneoversqrttwo = 1/(glm::sqrt(2.0f));
-    bool sticky = false;
     if(glfwGetKey(*window, GLFW_KEY_W) == GLFW_PRESS) {
 
         posz = -1;
@@ -64,7 +63,7 @@ void camera::move(GLFWwindow **window) {
     }
     
     pos += speed * glm::vec3(posx,posy,posz)  * multiplier;
-    std::cout <<  glm::length(speed * glm::vec3(posx,posy,posz)  * multiplier)<< std::endl;
+    // CAMERA SPEED STAYS CONSTANT std::cout <<  glm::length(speed * glm::vec3(posx,posy,posz)  * multiplier)<< std::endl;
     posx = 0;
     posy = 0;
     posz = 0;
